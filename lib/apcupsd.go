@@ -61,9 +61,6 @@ func (u APCUPSPlugin) FetchMetrics() (map[string]float64, error) {
 
 // failsafe
 func (u APCUPSPlugin) MetricKeyPrefix() string {
-	if u.prefix == "" {
-		u.prefix = "ups"
-	}
 	return u.prefix
 }
 
