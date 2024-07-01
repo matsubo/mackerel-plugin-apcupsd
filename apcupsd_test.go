@@ -1,4 +1,4 @@
-package main
+package ups_plugin
 
 import (
 	"os/exec"
