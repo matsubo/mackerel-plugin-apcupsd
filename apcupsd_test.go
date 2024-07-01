@@ -1,4 +1,4 @@
-package ups_plugin
+package apcupsd_plugin
 
 import (
 	"os/exec"

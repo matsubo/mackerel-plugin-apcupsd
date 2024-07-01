@@ -1,4 +1,4 @@
-module github.com/matsubo/mackerel-plugin-ups
+module github.com/matsubo/mackerel-plugin-apcupsd
 
 
 go 1.22.4
