@@ -10,20 +10,28 @@ This plugin collects metrics from an APC UPS (Uninterruptible Power Supply) usin
 
 ## Installation
 
+### via mkr command
+
+```
+sudo mkr plugin install mackerel-plugin-apcupsd
+```
+
+### via GitHub
+
 1. Clone this repository:
    ```
-   git clone https://github.com/matsubo/mackerel-plugin-ups.git
-   cd mackerel-plugin-ups
+   git clone https://github.com/matsubo/mackerel-plugin-apcupsd.git
+   cd mackerel-plugin-apcupsd
    ```
 
 2. Build the plugin:
    ```
-   go build -o mackerel-plugin-ups
+   go build -o mackerel-plugin-apcupsd
    ```
 
 3. Place the built binary in a directory where the Mackerel agent can access it (e.g., `/usr/local/bin/`):
    ```
-   sudo cp mackerel-plugin-ups /usr/local/bin/
+   sudo cp mackerel-plugin-apcupsd /usr/local/bin/
    ```
 
 ## Configuration
@@ -31,8 +39,8 @@ This plugin collects metrics from an APC UPS (Uninterruptible Power Supply) usin
 Add the following configuration to your Mackerel agent configuration file (usually located at `/etc/mackerel-agent/mackerel-agent.conf`):
 
 ```
-[plugin.metrics.ups]
-command = "/usr/local/bin/mackerel-plugin-ups"
+[plugin.metrics.apcapcupsd]
+command = "/usr/local/bin/mackerel-plugin-apcapcupsd"
 ```
 
 ## Collected Metrics
