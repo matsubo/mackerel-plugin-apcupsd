@@ -1,4 +1,4 @@
-package apcupsd_plugin
+package apcupsdplugin
 
 import (
 	"os/exec"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestGraphDefinition(t *testing.T) {
-	u := UPSPlugin{}
+	u := APCUPSPlugin{}
 	graph := u.GraphDefinition()
 
 	expected := map[string]mp.Graphs{
@@ -32,7 +32,7 @@ func TestGraphDefinition(t *testing.T) {
 }
 
 func TestMetricKeyPrefix(t *testing.T) {
-	u := UPSPlugin{}
+	u := APCUPSPlugin{}
 	prefix := u.MetricKeyPrefix()
 
 	if prefix != "ups" {
@@ -47,7 +47,7 @@ func TestFetchMetrics(t *testing.T) {
 		t.Skip("apcaccess command not available, skipping test")
 	}
 
-	u := UPSPlugin{}
+	u := APCUPSPlugin{}
 	metrics, err := u.FetchMetrics()
 
 	if err != nil {

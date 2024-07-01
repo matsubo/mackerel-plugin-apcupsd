@@ -1,4 +1,4 @@
-package apcupsd_plugin
+package apcupsdplugin
 
 import (
 	"os/exec"
@@ -8,11 +8,13 @@ import (
 	mp "github.com/mackerelio/go-mackerel-plugin"
 )
 
-type UPSPlugin struct {
+// APCUPSPlugin: Name of graph
+type APCUPSPlugin struct {
 	prefix string
 }
 
-func (u UPSPlugin) GraphDefinition() map[string]mp.Graphs {
+// Definition of the graph metric
+func (u APCUPSPlugin) GraphDefinition() map[string]mp.Graphs {
 	return map[string]mp.Graphs{
 		"ups": {
 			Label: "UPS Metrics",
@@ -28,7 +30,8 @@ func (u UPSPlugin) GraphDefinition() map[string]mp.Graphs {
 	}
 }
 
-func (u UPSPlugin) FetchMetrics() (map[string]float64, error) {
+// execute and parse
+func (u APCUPSPlugin) FetchMetrics() (map[string]float64, error) {
 	output, err := exec.Command("apcaccess").Output()
 	if err != nil {
 		return nil, err
@@ -56,15 +59,17 @@ func (u UPSPlugin) FetchMetrics() (map[string]float64, error) {
 	return metrics, nil
 }
 
-func (u UPSPlugin) MetricKeyPrefix() string {
+// failsafe
+func (u APCUPSPlugin) MetricKeyPrefix() string {
 	if u.prefix == "" {
 		u.prefix = "ups"
 	}
 	return u.prefix
 }
 
+// Main
 func Do() {
-	u := UPSPlugin{}
+	u := APCUPSPlugin{}
 	plugin := mp.NewMackerelPlugin(u)
 	plugin.Run()
 }
