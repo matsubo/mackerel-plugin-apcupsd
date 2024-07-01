@@ -1,4 +1,4 @@
-package main
+package ups_plugin
 
 import (
 	"os/exec"
@@ -63,7 +63,7 @@ func (u UPSPlugin) MetricKeyPrefix() string {
 	return u.prefix
 }
 
-func main() {
+func Do() {
 	u := UPSPlugin{}
 	plugin := mp.NewMackerelPlugin(u)
 	plugin.Run()

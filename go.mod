@@ -1,4 +1,5 @@
-module ups_plugin
+module github.com/matsubo/mackerel-plugin-ups
+
 
 go 1.22.4
 
