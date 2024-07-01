@@ -2,6 +2,8 @@
 
 This plugin collects metrics from an APC UPS (Uninterruptible Power Supply) using the `apcaccess` command and reports them to Mackerel.
 
+<img width="388" alt="image" src="https://github.com/matsubo/mackerel-plugin-apcupsd/assets/98103/2b66ec1a-209e-494e-9c61-75a9d255c3ac">
+
 ## Prerequisites
 
 - Go 1.16 or later
