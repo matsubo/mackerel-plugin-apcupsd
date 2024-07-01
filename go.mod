@@ -1,7 +1,7 @@
 module github.com/matsubo/mackerel-plugin-apcupsd
 
 
-go 1.22.4
+go 1.22
 
 require github.com/mackerelio/go-mackerel-plugin v0.1.5
 
