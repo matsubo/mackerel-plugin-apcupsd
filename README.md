@@ -15,7 +15,7 @@ This plugin collects metrics from an APC UPS (Uninterruptible Power Supply) usin
 ### via mkr command
 
 ```
-sudo mkr plugin install mackerel-plugin-apcupsd
+sudo mkr plugin install matsubo/mackerel-plugin-apcupsd
 ```
 
 ### via GitHub
